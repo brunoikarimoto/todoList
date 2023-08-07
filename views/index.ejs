@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js" defer></script>
+
+    <title>TodoList</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Daily</a>
+            <a href="/work">Work</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="day">
+            <h1><%= weekDay %>, <%= day %> <%= month %></h1>
+            <h2><%= type %> Tasks</h2>
+        </div>
+
+        <div class="tasks">
+            <% if(locals.tasks){ %>
+                <% tasks.forEach(task => { %>
+                    <div class="task">
+                        <li>
+                            <form action="/delete" method="POST">
+                                <a href="/check/<%= task._id %>" class="checked-<%= task.check %>"></a>
+                                <p class="check-<%= task.check %>"><%= task.name %></p>
+                                <button class="delete_button" type="submit" value="<%= task._id %>" name="delete">DELETE</button>
+                            </form>
+                        </li>
+                    </div>
+                <% }); %>
+            <% } %>
+
+            <form class="item" action="/submit" method="POST">
+                <input type="text" autocomplete="off" required placeholder="Task" name="item">
+                <button type="submit">+</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made by Bruno Ikarimoto, <%= new Date().getFullYear() %></p>
+    </footer>
+</body>
+</html>

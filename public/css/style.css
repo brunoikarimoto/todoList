@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #A1CCD1;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+
+    margin: 20px;
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+}
+
+main, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    margin: 30px;
+}
+
+.day {
+    width: 30%;
+    background-color: #F4F2DE;
+    border-radius: 8px;
+}
+
+.day>h1 {
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Sacramento', cursive;
+    font-size: 40px;
+}
+
+.day>h2{
+    text-align: center;
+    font-family: 'Sacramento', cursive;
+    font-size: 30px;
+}
+
+.tasks {
+    background-color: #F4F2DE;
+    min-height: 30px;
+    width: 30%;
+    border-radius: 8px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    list-style: none;
+    font-size: 20px;
+}
+
+.task {
+    padding: 30px;
+    border-bottom: 1px solid #7C9D96;
+}
+
+.task>li>input {
+    margin-right: 10px;
+}
+
+form.item {
+    padding: 30px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+li>form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.check-true {
+    text-decoration: line-through;
+    color: red;
+}
+
+.check-false {
+    text-decoration: none;
+    color: black;
+}
+
+a.checked-true {
+    content: "";
+    border: black solid;
+    height: 15px;
+    width: 7px;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+a.checked-false{
+    content: "";
+    border: black solid;
+    height: 16px;
+    width: 16px;
+    border-width: 2px;
+}
+
+input[type=text] {
+    background-color: #F4F2DE;
+    width: 85%;
+    border: none;
+    border-bottom: 2px solid #7C9D96;
+    font-size: 17px;
+    height: 2.2rem;
+    padding: 0px 10px;
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: #7C9D96;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+button.delete_button {
+    border: none;
+    background-color: #7C9D96;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+@media (max-width: 1000px){
+    .tasks, .day{
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .tasks, .day {
+        width: 90%;
+    }
+}
