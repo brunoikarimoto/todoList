@@ -1,8 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
-mongoose.connect("mongodb+srv://brunoikarimoto:batata123@cluster0.fxho0xm.mongodb.net/ToDoList", {
+mongoose.connect(process.env.MONGO, {
     useNewUrlParser: true
 });
 
